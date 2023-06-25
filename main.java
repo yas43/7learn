@@ -1,30 +1,35 @@
 package yash_yaser;
 
-import java.util.Scanner;
+enum Size {
+	LARG, MEDIUM, SMALL
+}
 
-public class main {
+public class Draft_demo {
 
-	public static void main2(String[] args) {
-		System.out.println("enter length of rectangle please :");
-		Scanner length = new Scanner(System.in);
-		int	rectangle_length = length.nextInt();
-		System.out.println("enter width of rectangle please : ");
-		Scanner width = new Scanner(System.in);
-		int rectangle_width = width.nextInt();
-		int surface = rectangle_length * rectangle_width;
-		if(surface<=20) {
-			System.out.println("surface of rectangle is :" + surface);
-			System.out.println("it's a small rectangle!!");
-		}
-		else if((surface>20) && (surface<50)) {
-			System.out.println("surface of rectangle is :" + surface);
-			System.out.println("it's medium size recangle !!!!");
-		}
-		else {
-			System.out.println("surface of rectangle is :" + surface);
-			System.out.println("it's a big rectangle");
+	static Size result_1 = Size.SMALL;
+	static Size result_2 = Size.MEDIUM;
+	static Size result_3 = Size.LARG;
+
+	static Size my_method(String a) {
+
+		switch (a) {
+		case "small":
+			return result_1;
+
+		case "middle":
+			return result_2;
+
+		case "big":
+			return result_3;
+
 		}
 
 	}
+
+	public class main {
+
+	public static void main2(String[] args) {
+		
+		my_method("small");
 
 }
